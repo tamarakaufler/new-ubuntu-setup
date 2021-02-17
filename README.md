@@ -5,33 +5,33 @@
 1) golang_setup_1.sh
     * installs various useful deb packages
     * sets up Go including
-        ** gRPC compiler and plugins
+        * gRPC compiler and plugins
     * installs Visual Studio
     * adds useful basl aliases
     * sets up vim
-    runs ./vim_setup.sh to install various vim plugins
-        ** vim-go
-        ** NERDTree
-        ** vim-airline
-        ** vim-airline-themes
-        ** vim-project (started optionally)
-        ** badwolf colour scheme
+        * runs ./vim_setup.sh to install various vim plugins
+	        * vim-go
+	        * NERDTree
+	        * vim-airline
+	        * vim-airline-themes
+	        * vim-project (started optionally)
+	        * badwolf colour scheme
 
 2) linuxbrew_install_2.sh
     * installs Homebrew
-    * installs fzf (fyzzy finder)
+    * installs fzf (fuzzy finder)
     * installs bash-git-prompt
 
 3) cluster_tools_setup_3.sh
     * sets up docker
     * google SDK
     * kubernetes related tools:
-        ** kubectl
-        ** helm + helm-diff plugin
-        ** kubectx
+        * kubectl
+        * helm + helm-diff plugin
+        * kubectx
 
 4) clone_github_repos_4.sh
-    cloning of desired repos
+    * cloning of desired repos
 
 NOTE
 
