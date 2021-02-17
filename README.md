@@ -9,7 +9,7 @@
     * installs Visual Studio
     * adds useful basl aliases
     * sets up vim
-        * runs ./vim_setup.sh to install various vim plugins
+        * runs vim_setup.sh to install various vim plugins
 	        * vim-go
 	        * NERDTree
 	        * vim-airline
