@@ -1,0 +1,180 @@
+# ~/.bashrc: executed by bash(1) for non-login shells.
+# see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
+# for examples
+
+# If not running interactively, don't do anything
+case $- in
+    *i*) ;;
+      *) return;;
+esac
+
+# don't put duplicate lines or lines starting with space in the history.
+# See bash(1) for more options
+HISTCONTROL=ignoreboth
+
+# append to the history file, don't overwrite it
+shopt -s histappend
+
+# for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
+HISTSIZE=1000
+HISTFILESIZE=2000
+
+# check the window size after each command and, if necessary,
+# update the values of LINES and COLUMNS.
+shopt -s checkwinsize
+
+# If set, the pattern "**" used in a pathname expansion context will
+# match all files and zero or more directories and subdirectories.
+#shopt -s globstar
+
+# make less more friendly for non-text input files, see lesspipe(1)
+[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
+
+# set variable identifying the chroot you work in (used in the prompt below)
+if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
+    debian_chroot=$(cat /etc/debian_chroot)
+fi
+
+# set a fancy prompt (non-color, unless we know we "want" color)
+case "$TERM" in
+    xterm-color) color_prompt=yes;;
+esac
+
+# uncomment for a colored prompt, if the terminal has the capability; turned
+# off by default to not distract the user: the focus in a terminal window
+# should be on the output of commands, not on the prompt
+force_color_prompt=yes
+if [ -n "$force_color_prompt" ]; then
+    if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
+	# We have color support; assume it's compliant with Ecma-48
+	# (ISO/IEC-6429). (Lack of such support is extremely rare, and such
+	# a case would tend to support setf rather than setaf.)
+	color_prompt=yes
+    else
+	color_prompt=
+    fi
+fi
+
+## fuzzy command finder (inserted automatically by running: $(brew --prefix)/opt/fzf/install
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+## simple prompt
+# if [ "$color_prompt" = yes ]; then
+#     PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+# else
+#     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
+# fi
+
+
+## bash prompt (for Go development) - simple alternative to the setup below
+# RED='\e[0;31m'
+# GREEN='\e[0;32m'
+# NC='\e[0m'
+# GIT_BRANCH='$(__git_ps1 "(%s)")'
+# GVM='$(gvm-prompt "(%s)")'
+# 
+# if [ $(whoami) = 'root' ]; then
+#   PS1="[${RED}\u@\h:\W \t.\d${GREEN}${GIT_BRANCH}$NC ${GVM}]# "
+# else
+#   PS1="[${GREEN}\u@\h:\W ${RED}${GIT_BRANCH}$NC ${GVM}]$ "
+# fi
+
+
+# K8S info for the prompt
+# -----------------------
+# alias k8s_ctx="kubectl config current-context"
+# alias k8s_ns="kubectl config view -o=jsonpath=\"{.contexts[?(@.name=='$(k8s_ctx)')].context.namespace}\""
+alias k8s_ctx="echo unknown"
+alias k8s_ns="echo unknown"
+
+# prompt with git repo info
+if [ "$color_prompt" = yes ]; then
+    if [ -f ~/.linuxbrew/etc/bash_completion.d/git-prompt.sh ]; then
+        source ~/.linuxbrew/etc/bash_completion.d/git-prompt.sh
+
+    	PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\[\033[01;33m\]$(__git_ps1 "(%s)")\[\033[00m\]\[\033[01;36m\]<$(k8s_ctx):$(k8s_ns)>\[\033[00m\]\$ '
+    else 
+    	PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\[\033[01;33m\]$(__git_ps1 "(%s)")\[\033[00m\]\[\033[01;36m\]<$(k8s_ctx):$(k8s_ns)>\[\033[00m\]\$ '
+    fi
+else
+    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
+fi
+
+unset color_prompt force_color_prompt
+
+# If this is an xterm set the title to user@host:dir
+case "$TERM" in
+xterm*|rxvt*)
+    PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
+    ;;
+*)
+    ;;
+esac
+
+# enable color support of ls and also add handy aliases
+if [ -x /usr/bin/dircolors ]; then
+    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+    alias ls='ls --color=auto'
+
+    alias grep='grep --color=auto'
+    alias fgrep='fgrep --color=auto'
+    alias egrep='egrep --color=auto'
+fi
+
+# colored GCC warnings and errors
+#export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
+
+# some more ls aliases
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'
+
+# Add an "alert" alias for long running commands.  Use like so:
+#   sleep 10; alert
+alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
+
+# Alias definitions.
+if [ -f ~/.bash_aliases ]; then
+    . ~/.bash_aliases
+fi
+
+# enable programmable completion features (you don't need to enable
+# this, if it's already enabled in /etc/bash.bashrc and /etc/profile
+# sources /etc/bash.bashrc).
+if ! shopt -oq posix; then
+  if [ -f /usr/share/bash-completion/bash_completion ]; then
+    . /usr/share/bash-completion/bash_completion
+  elif [ -f /etc/bash_completion ]; then
+    . /etc/bash_completion
+  fi
+fi
+
+export EDITOR="/usr/local/bin/vim"
+
+# -------------------------------------------------------------------------------
+# Golang settings
+
+# To find Go executable
+export GOROOT="/usr/local/go"
+
+# Go workspace and to have access to gocode
+export GOPATH="/home/$USER/go"
+export PATH=$GOPATH/bin:$GOROOT/bin:$HOME/bin:$PATH
+# -------------------------------------------------------------------------------
+
+#[[ -s "/home/$USER/.gvm/scripts/gvm" ]] && source "/home/$USER/.gvm/scripts/gvm"
+
+# Chrome proxy settings
+# gsettings set org.gnome.system.proxy.http host "localhost"
+# gsettings set org.gnome.system.proxy.http port "8080"
+# gsettings set org.gnome.system.proxy ignore-hosts "['localhost', '127.0.0.0/8', '::1', '*.some.domain', '10.0.0.0/8']" 
+
+# invoke Chrome from the command line:
+#       chromium-browser --proxy-server="http=localhost:8888;https=localhost:8888"
+
+source <(kubectl completion bash)
+
+export KUBECONFIG="$HOME/.kube/raspberryPiConfigK3S:$HOME/.kube/raspberryPiConfigK8S"
+
+## to allow modules download from a private repo
+#export GONOSUMDB="github.com/karhoo"

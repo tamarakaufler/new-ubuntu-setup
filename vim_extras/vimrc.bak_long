@@ -1,0 +1,62 @@
+" vim for Go development
+" ----------------------
+"
+" helpful links:
+"   https://coderoncode.com/tools/2017/04/16/vim-the-perfect-ide.html
+"   ==> https://dev.to/allanmacgregor/vim-is-the-perfect-ide-e80
+"	https://medium.com/@huntie/10-essential-vim-plugins-for-2018-39957190b7a9
+"
+"   https://vimawesome.com/plugin/project-vim
+"   https://github.com/neoclide/coc.nvim/blob/master/doc/coc.txt
+"   https://github.com/fatih/vim-go
+"   https://github.com/Shougo/deoplete.nvim
+"
+"
+"set nocompatible
+" 
+" Colors {{{
+syntax enable           " enable syntax processing
+colorscheme badwolf
+if has('gui_running')
+	set guifont=DejaVu\ Sans\ Mono\ 16
+endif
+" }}}
+" Misc {{{
+set ttyfast                     " faster redraw
+set backspace=indent,eol,start
+" }}}
+" Spaces & Tabs {{{
+set tabstop=2           " 4 space tab
+set noexpandtab         " do not use spaces for tabs
+set softtabstop=2       " 4 space tab
+set shiftwidth=2
+set modelines=1
+filetype indent on
+filetype plugin on
+set autoindent
+" }}}
+" UI Layout {{{
+set number              " show line numbers
+set ruler
+set showcmd             " show command in bottom bar
+set nocursorline          " highlight current line
+set wildmenu
+" shows what you are typing as a command
+"set showcmd
+" folding
+"set foldmethod=marker
+"set lazyredraw
+set showmatch           " higlight matching parenthesis
+" }}}
+" Searching {{{
+set ignorecase          " ignore case when searching
+set incsearch           " search as characters are entered
+set hlsearch            " highlight all matches
+" }}}
+"
+" disable autosaving
+let g:auto_save = 1
+"
+"   theme
+"Plug 'sjl/badwolf'
+

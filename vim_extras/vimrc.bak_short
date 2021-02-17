@@ -1,0 +1,10 @@
+" If installed using Homebrew
+set rtp+=/usr/local/opt/fzf
+
+set guifont=Monospace\ 12
+set noignorecase
+set nu
+
+execute pathogen#infect()
+syntax on
+filetype plugin indent on
