@@ -2,7 +2,7 @@
 
 # Configuration scripts
 
-1) golang_setup_1.sh
+1) __golang_setup_1.sh__
     * installs various useful deb packages
     * sets up Go including
         * gRPC compiler and plugins
@@ -17,12 +17,12 @@
 	        * vim-project (started optionally)
 	        * badwolf colour scheme
 
-2) linuxbrew_install_2.sh
+2) __linuxbrew_install_2.sh__
     * installs Homebrew
     * installs fzf (fuzzy finder)
     * installs bash-git-prompt
 
-3) cluster_tools_setup_3.sh
+3) __cluster_tools_setup_3.sh__
     * sets up docker
     * google SDK
     * kubernetes related tools:
@@ -30,12 +30,12 @@
         * helm + helm-diff plugin
         * kubectx
 
-4) clone_github_repos_4.sh
+4) __clone_github_repos_4.sh__
     * cloning of desired repos
 
 NOTE
 
-The alternative_configuration directory contains scripts that can be used if the particular
+The *alternative_configuration* directory contains scripts that can be used if the particular
 functionality installation is not wanted/does not work. The scripts are then used in the
 relevant ubuntu configuration scripts as needed (.bashrc etc)
 
