@@ -97,17 +97,3 @@ sudo ln -s /opt/kubectx/kubens /usr/local/bin/kns
 #   gcloud auth application-default print-access-token
 # -------------------------------------------------------------------
 
-## KARHOO related
-#  --------------
-# Envy
-
-# cd && brew tap karhoo/envy git@github.com:karhoo/envy && brew install karhoo/envy/envy
-
-# mkdir -p ~/Work/Karhoo
-# cd  ~/Work/Karhoo && git clone git@github.com:karhoo/k8s-manifests.git
-# echo "export K8S_MANIFESTS_DIR=\"$HOME/Work/Karhoo/k8s-manifests\"" >> ~/.profile
-# envy configure
-# (brew update && brew upgrade envy)
-##		sudo ln -s /home/tamara/google-cloud-sdk/bin/docker-credential-gcloud /usr/local/bin/docker-credential-gcloud
-##		sudo ln -s /home/tamara/google-cloud-sdk/bin/docker-credential-gcr /usr/local/bin/docker-credential-gcr
-
