@@ -70,6 +70,9 @@ fi
 # utilities
 #===========
 
+# https://github.com/BurntSushi/ripgrep"
+brew install ripgrep
+
 echo "alias diff=colordiff" >> ~/.bash_aliases
 echo "alias dir='dir --color=auto'" >> ~/.bash_aliases
 echo "alias vdir='vdir --color=auto'" >> ~/.bash_aliases

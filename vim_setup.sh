@@ -6,10 +6,20 @@
 # ==> https://vimawesome.com/
 
 # since vim 8 - native 3rd party package loading: https://shapeshed.com/vim-packages/
+repoowner=${REPO_OWNER:-tamarakaufler}
+
+mkdir -p ~/.vim/pack/vendor/{start,opt}
+vim_plugins_start=~/.vim/pack/vendor/start
+vim_plugins_opt=~/.vim/pack/vendor/opt
 
 echo "******************" >> ~/.vimrc 
 echo "\"*** default leader is \ ***" >> ~/.vimrc 
 echo "******************" >> ~/.vimrc 
+echo "" >> ~/.vimrc
+
+# install vim themes
+git clone https://github.com/sjl/badwolf  ${vim_plugins_start}/badwolf
+echo "colorscheme badwolf" >> ~/.vimrc
 echo "" >> ~/.vimrc
 
 echo "set guifont=Monospace\ 14" >> ~/.vimrc
@@ -20,13 +30,10 @@ echo "filetype plugin on" >> ~/.vimrc
 #echo "filetype plugin indent on" >> ~/.vimrc 
 echo "" >> ~/.vimrc
 
-mkdir -p ~/.vim/pack/vendor/{start,opt}
-vim_plugins_start=~/.vim/pack/vendor/start
-vim_plugins_opt=~/.vim/pack/vendor/opt
 git clone https://github.com/fatih/vim-go.git ${vim_plugins_start}/vim-go
+
 #git clone https://github.com/scrooloose/nerdtree.git ${vim_plugins_start}/nerdtree
 git clone https://github.com/preservim/nerdtree.git ${vim_plugins_start}/nerdtree
-
 echo "\" Start NERDTree and put the cursor back in the other window." >> ~/.vimrc
 echo "autocmd VimEnter * NERDTree | wincmd p" >> ~/.vimrc
 echo "\" use <C-o> autocmds autocmd starthortcut to start NERDTree" >> ~/.vimrc
@@ -65,8 +72,4 @@ git clone https://github.com/preservim/nerdcommenter.git ${vim_plugins_start}/ne
 cat ./vim_extras/NERDCommenter_snippet >> ~/.vimrc
 echo "" >> ~/.vimrc
 
-# install vim themes
-git clone https://github.com/sjl/badwolf  ${vim_plugins_start}/badwolf
-echo "colorscheme badwolf" >> ~/.vimrc
-echo "" >> ~/.vimrc
 
