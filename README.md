@@ -1,4 +1,4 @@
-# new-ubuntu-configuration
+## new-ubuntu-configuration
 
 # Configuration scripts
 
