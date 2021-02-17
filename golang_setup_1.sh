@@ -59,6 +59,11 @@ sudo apt-get install -y nodejs
 # create useful directories
 #==========================
 mkdir -p ~/go_projects/${repoowner}
+if [ $? == 0 ]; then
+    echo "alias goproj='cd ~/go_projects'" >> ~/.bash_aliases
+    echo "alias goprojt='cd ~/go_projects/$repoowner'" >> ~/.bash_aliases
+fi
+
 
 
 #===========
