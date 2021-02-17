@@ -12,7 +12,7 @@ echo "\"*** default leader is \ ***" >> ~/.vimrc
 echo "******************" >> ~/.vimrc 
 echo "" >> ~/.vimrc
 
-echo "set guifont=Monospace\ 12" >> ~/.vimrc
+echo "set guifont=Monospace\ 14" >> ~/.vimrc
 echo "set noignorecase" >> ~/.vimrc 
 echo "set nu" >> ~/.vimrc 
 echo "syntax on" >> ~/.vimrc 
