@@ -7,6 +7,7 @@
     * sets up Go including
         * gRPC compiler and plugins
     * installs Visual Studio
+    * installs ripgrep
     * adds useful bash aliases
     * sets up vim
         * runs vim_setup.sh to install various vim plugins
