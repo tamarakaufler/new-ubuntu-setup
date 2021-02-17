@@ -53,7 +53,7 @@ sudo ln -s /opt/kubectx/kubens /usr/local/bin/kns
 
 
 
-# INTERACTIVE
+# INTERACTIVE - this needs a cleanup
 
 # # GOOGLE CLOUD SDK - authentication
 # ------------------

@@ -1,6 +1,6 @@
 ### 4 (NON INTERACTIVE)
 
-repoowner=tamarakaufler
+repoowner=${REPO_OWNER:-tamarakaufler}
 
 ## Clone github repos
 # -------------------
