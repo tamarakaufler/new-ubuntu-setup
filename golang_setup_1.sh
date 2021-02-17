@@ -4,7 +4,7 @@ GO_VERSION=${GO_VERSION:-1.15.8}
 PROTOC_VERSION_URL=${PROTOC_VERSION:-v3.14.0}
 PROTOC_VERSION=${PROTOC_VERSION:-3.14.0}
 curdir=$(pwd)
-repoowner=tamarakaufler
+repoowner=${REPO_OWNER:-tamarakaufler}
 
 # Additinal installations
 # -----------------------
@@ -54,6 +54,12 @@ sudo snap install --classic code
 # nodejs
 #curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
 sudo apt-get install -y nodejs
+
+#==========================
+# create useful directories
+#==========================
+mkdir -p ~/go_projects/${repoowner}
+
 
 #===========
 # utilities
