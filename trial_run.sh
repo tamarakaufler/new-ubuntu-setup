@@ -1,10 +1,4 @@
-repoowner=${REPO_OWNER:-tamarakaufler}
-echo $repoowner
-echo "alias goprojt='cd ~/go_projects/$repoowner'"
+GO_VERSION=${GO_VERSION:-1.16}
 
-mkdir -p ~/go_projects/${repoowner}
-if [ $? == 0 ]; then    # this is 0 even if the directories exist
-    echo "alias goproj='cd ~/go_projects'" >> ~/.bash_aliases
-    echo "alias goprojt='cd ~/go_projects/$repoowner'" >> ~/.bash_aliases
-fi
-
+wget https://dl.google.com/go/go${GO_VERSION}.linux-amd64.tar.gz && sudo tar -C /usr/local -xvf go${GO_VERSION}.linux-amd64.tar.gz
+rm -rf go${GO_VERSION}.linux-amd64.tar.gz*
