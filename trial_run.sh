@@ -1,4 +1,4 @@
-GO_VERSION=${GO_VERSION:-1.16}
 
-wget https://dl.google.com/go/go${GO_VERSION}.linux-amd64.tar.gz && sudo tar -C /usr/local -xvf go${GO_VERSION}.linux-amd64.tar.gz
-rm -rf go${GO_VERSION}.linux-amd64.tar.gz*
+GOLANGCI_VERSION=v1.36.0
+GOLANGCI=$(which golangci-lint 2>/dev/null)
+curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s -- -b $(go env GOPATH)/bin ${GOLANGCI_VERSION}
