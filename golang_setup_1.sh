@@ -36,11 +36,9 @@ curl -LO $PB_REL/download/${PROTOC_VERSION_URL}/protoc-${PROTOC_VERSION}-linux-x
 unzip protoc-${PROTOC_VERSION}-linux-x86_64.zip -d $HOME/.local
 rm protoc-${PROTOC_VERSION}-linux-x86_64.zip
 
-echo "export PATH=\$HOME/.local/bin:\$PATH" >> ~/.profile
-echo "" >> ~/.profile
-
 go get google.golang.org/protobuf/cmd/protoc-gen-go \
-       google.golang.org/grpc/cmd/protoc-gen-go-grpc
+	google.golang.org/grpc/cmd/protoc-gen-go-grpc \
+	github.com/uber/prototool/cmd/prototool@dev
 
 # Visual Studio
 # -------------
