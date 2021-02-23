@@ -72,4 +72,7 @@ git clone https://github.com/preservim/nerdcommenter.git ${vim_plugins_start}/ne
 cat ./vim_extras/NERDCommenter_snippet >> ~/.vimrc
 echo "" >> ~/.vimrc
 
+cat "Enables cursor visibility" >> ~/.vimrc
+cat ./vim_extras/cursor >> ~/.vimrc
+echo "" >> ~/.vimrc
 
