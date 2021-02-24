@@ -12,7 +12,7 @@ repoowner=${REPO_OWNER:-tamarakaufler}
 # -----------------------
 sudo apt-get update
 sudo apt-get -y upgrade
-sudo apt install -y build-essential gcc ca-certificates mlocate curl wget software-properties-common git file libffi-dev openvpn openvpn-systemd-resolved network-manager-openvpn tmux exuberant-ctags vim vim-editorconfig vim-scripts vim-ultisnips vim-gtk3 gnome-tweak-tool tree alembic mercurial sqlite  apt-transport-https gnupg2 gnupg-agent software-properties-common chromium-browser colordiff
+sudo apt install -y build-essential gcc ca-certificates mlocate net-tools curl wget software-properties-common git file libffi-dev openvpn openvpn-systemd-resolved network-manager-openvpn tmux exuberant-ctags vim vim-editorconfig vim-scripts vim-ultisnips vim-gtk3 gnome-tweak-tool tree alembic mercurial sqlite  apt-transport-https gnupg2 gnupg-agent software-properties-common chromium-browser colordiff
 
 # Golang
 # -----------------------
@@ -42,6 +42,8 @@ go get google.golang.org/protobuf/cmd/protoc-gen-go
 go get google.golang.org/grpc/cmd/protoc-gen-go-grpc
 
 go get github.com/uber/prototool/cmd/prototool@dev
+
+# mocking
 go get github.com/maxbrunsfeld/counterfeiter/v6
 
 # recommended not to used go get ....
