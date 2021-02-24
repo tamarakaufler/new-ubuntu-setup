@@ -38,8 +38,9 @@ curl -LO $PB_REL/download/${PROTOC_VERSION_URL}/protoc-${PROTOC_VERSION}-linux-x
 unzip protoc-${PROTOC_VERSION}-linux-x86_64.zip -d $HOME/.local
 rm protoc-${PROTOC_VERSION}-linux-x86_64.zip
 
-go get google.golang.org/protobuf/cmd/protoc-gen-go
-go get google.golang.org/grpc/cmd/protoc-gen-go-grpc
+# https://stackoverflow.com/questions/60578892/protoc-gen-go-grpc-program-not-found-or-is-not-executable
+go get -u google.golang.org/protobuf/cmd/protoc-gen-go
+go get -u google.golang.org/grpc/cmd/protoc-gen-go-grpc
 
 go get github.com/uber/prototool/cmd/prototool@dev
 
