@@ -31,12 +31,18 @@
         * helm + helm-diff plugin
         * kubectx
 
+3b) __cluster_tools_GCP_3b.sh__
+    * GCP - google SDK
+
 4) __clone_github_repos_4.sh__
     * cloning of desired repos
+
+5) __other_utilities_5.sh__
+    * Dropbox
 
 NOTE
 
 The *alternative_configuration* directory contains scripts that can be used if the particular
-functionality installation is not wanted/does not work. The scripts are then used in the
+functionality installation does not work/needs more customization. The scripts are then used in the
 relevant ubuntu configuration scripts as needed (.bashrc etc)
 

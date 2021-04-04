@@ -1,9 +1,9 @@
 ### 1 - INTERACTIVE
 
-GO_VERSION=${GO_VERSION:-1.16}
-PROTOC_VERSION_URL=${PROTOC_VERSION:-v3.14.0}
-PROTOC_VERSION=${PROTOC_VERSION:-3.14.0}
-GOLANGCI_VERSION=v1.36.0
+GO_VERSION=${GO_VERSION:-1.16.3}
+PROTOC_VERSION_URL=${PROTOC_VERSION:-v3.14.7}
+PROTOC_VERSION=${PROTOC_VERSION:-3.14.7}
+GOLANGCI_VERSION=v1.39.0
 
 curdir=$(pwd)
 repoowner=${REPO_OWNER:-tamarakaufler}
@@ -47,7 +47,8 @@ go get github.com/uber/prototool/cmd/prototool@dev
 # mocking
 go get github.com/maxbrunsfeld/counterfeiter/v6
 
-# recommended not to used go get ....
+# golangci-lint
+# recommended not to use go get ....
 curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s -- -b $(go env GOPATH)/bin ${GOLANGCI_VERSION}
 
 
