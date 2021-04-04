@@ -1,4 +1,4 @@
-# This installation is done during golang_setup_1.sh run
+# This is to retry/correct a particular installation
 
 PROTOC_VERSION_URL=${PROTOC_VERSION:-v3.15.7}
 PROTOC_VERSION=${PROTOC_VERSION:-3.15.7}
