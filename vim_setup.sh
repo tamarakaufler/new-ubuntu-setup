@@ -12,9 +12,9 @@ mkdir -p ~/.vim/pack/vendor/{start,opt}
 vim_plugins_start=~/.vim/pack/vendor/start
 vim_plugins_opt=~/.vim/pack/vendor/opt
 
-echo "******************" >> ~/.vimrc 
+echo "\"******************" >> ~/.vimrc 
 echo "\"*** default leader is \ ***" >> ~/.vimrc 
-echo "******************" >> ~/.vimrc 
+echo "\"******************" >> ~/.vimrc 
 echo "" >> ~/.vimrc
 
 # install vim themes
