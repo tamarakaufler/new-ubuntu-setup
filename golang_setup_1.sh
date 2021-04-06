@@ -48,6 +48,9 @@ go get github.com/uber/prototool/cmd/prototool@dev
 ## gRPC testing
 brew install grpcurl
 
+go get github.com/fullstorydev/grpcui/...
+go install github.com/fullstorydev/grpcui/cmd/grpcui
+
 # mocking
 go get github.com/maxbrunsfeld/counterfeiter/v6
 
