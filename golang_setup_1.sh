@@ -42,7 +42,11 @@ rm protoc-${PROTOC_VERSION}-linux-x86_64.zip
 go get -u google.golang.org/protobuf/cmd/protoc-gen-go
 go get -u google.golang.org/grpc/cmd/protoc-gen-go-grpc
 
+# protobuf generation
 go get github.com/uber/prototool/cmd/prototool@dev
+
+## gRPC testing
+brew install grpcurl
 
 # mocking
 go get github.com/maxbrunsfeld/counterfeiter/v6
