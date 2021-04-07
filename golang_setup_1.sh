@@ -12,7 +12,12 @@ repoowner=${REPO_OWNER:-tamarakaufler}
 # -----------------------
 sudo apt-get update
 sudo apt-get -y upgrade
-sudo apt install -y build-essential gcc ca-certificates mlocate net-tools curl wget software-properties-common git file libffi-dev openvpn openvpn-systemd-resolved network-manager-openvpn tmux exuberant-ctags vim vim-editorconfig vim-scripts vim-ultisnips vim-gtk3 gnome-tweak-tool tree alembic mercurial sqlite  apt-transport-https gnupg2 gnupg-agent software-properties-common chromium-browser colordiff postgresql-client pgadmin3 wireguard
+#sudo apt install -y build-essential gcc ca-certificates mlocate net-tools curl wget software-properties-common git file libffi-dev openvpn openvpn-systemd-resolved network-manager-openvpn tmux exuberant-ctags vim vim-editorconfig vim-scripts vim-ultisnips vim-gtk3 gnome-tweak-tool tree alembic mercurial sqlite  apt-transport-https gnupg2 gnupg-agent software-properties-common chromium-browser colordiff postgresql-client pgadmin3 wireguard
+sudo apt install -y build-essential gcc ca-certificates mlocate net-tools curl wget software-properties-common git file libffi-dev tmux exuberant-ctags vim vim-editorconfig vim-scripts vim-ultisnips vim-gtk3 gnome-tweak-tool tree alembic mercurial sqlite  apt-transport-https gnupg2 gnupg-agent software-properties-common chromium-browser colordiff postgresql-client pgadmin3
+
+# !!!! Networking - choose whatever is needed
+#sudo apt install -y openvpn openvpn-systemd-resolved network-manager-openvpn
+#sudo apt install -y wireguard
 
 # Golang
 # -----------------------
