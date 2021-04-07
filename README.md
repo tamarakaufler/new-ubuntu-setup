@@ -18,6 +18,9 @@
 	        * vim-project (started optionally)
 	        * badwolf colour scheme
 
+1b) __development_setup_1b.sh__
+    * Postgresql tools
+
 2) __linuxbrew_install_2.sh__
     * installs Homebrew
     * installs fzf (fuzzy finder)
@@ -39,6 +42,7 @@
 
 5) __other_utilities_5.sh__
     * Dropbox
+    * CherryTree
 
 NOTE
 
