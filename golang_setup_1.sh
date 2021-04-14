@@ -12,7 +12,12 @@ repoowner=${REPO_OWNER:-tamarakaufler}
 # -----------------------
 sudo apt-get update
 sudo apt-get -y upgrade
-sudo apt install -y build-essential gcc ca-certificates mlocate net-tools curl wget software-properties-common git file libffi-dev openvpn openvpn-systemd-resolved network-manager-openvpn tmux exuberant-ctags vim vim-editorconfig vim-scripts vim-ultisnips vim-gtk3 gnome-tweak-tool tree alembic mercurial sqlite  apt-transport-https gnupg2 gnupg-agent software-properties-common chromium-browser colordiff
+#sudo apt install -y build-essential gcc ca-certificates mlocate net-tools curl wget software-properties-common git file libffi-dev openvpn openvpn-systemd-resolved network-manager-openvpn tmux exuberant-ctags vim vim-editorconfig vim-scripts vim-ultisnips vim-gtk3 gnome-tweak-tool tree alembic mercurial sqlite  apt-transport-https gnupg2 gnupg-agent software-properties-common chromium-browser colordiff postgresql-client pgadmin3 wireguard
+sudo apt install -y build-essential gcc ca-certificates mlocate net-tools curl wget software-properties-common git file libffi-dev tmux exuberant-ctags vim vim-editorconfig vim-scripts vim-ultisnips vim-gtk3 gnome-tweak-tool tree alembic mercurial sqlite  apt-transport-https gnupg2 gnupg-agent software-properties-common chromium-browser colordiff postgresql-client pgadmin3
+
+# !!!! Networking - choose whatever is needed
+#sudo apt install -y openvpn openvpn-systemd-resolved network-manager-openvpn
+#sudo apt install -y wireguard
 
 # Golang
 # -----------------------
@@ -42,7 +47,14 @@ rm protoc-${PROTOC_VERSION}-linux-x86_64.zip
 go get -u google.golang.org/protobuf/cmd/protoc-gen-go
 go get -u google.golang.org/grpc/cmd/protoc-gen-go-grpc
 
+# protobuf generation
 go get github.com/uber/prototool/cmd/prototool@dev
+
+## gRPC testing
+brew install grpcurl
+
+go get github.com/fullstorydev/grpcui/...
+go install github.com/fullstorydev/grpcui/cmd/grpcui@latest
 
 # mocking
 go get github.com/maxbrunsfeld/counterfeiter/v6

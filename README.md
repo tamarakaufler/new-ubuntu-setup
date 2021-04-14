@@ -39,6 +39,7 @@
 
 5) __other_utilities_5.sh__
     * Dropbox
+    * CherryTree
 
 NOTE
 
