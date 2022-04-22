@@ -108,3 +108,10 @@ echo "alias gitd='git diff '" >> ~/.bash_aliases
 echo "" >> ~/.bash_aliases
 
 bash vim_setup.sh
+
+# buf CLI enables you to create consistent Protobuf APIs:
+# A new developed high-performance Protobuf compiler.
+# A linter that enforces good API design choices and structure.
+# A breaking change detector that enforces compatibility at the source code or wire level.
+# A generator that invokes your protoc plugins based on a configurable template.
+brew install bufbuild/buf/buf
