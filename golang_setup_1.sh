@@ -115,3 +115,6 @@ bash vim_setup.sh
 # A breaking change detector that enforces compatibility at the source code or wire level.
 # A generator that invokes your protoc plugins based on a configurable template.
 brew install bufbuild/buf/buf
+
+# A lightweight and portable command-line YAML, JSON and XML processor. yq uses jq like syntax but works with yaml files as well as json and xml. It doesn't yet support everything jq does - but it does support the most common operations and functions, and more is being added continuously. yq is written in Go.
+brew install yq
