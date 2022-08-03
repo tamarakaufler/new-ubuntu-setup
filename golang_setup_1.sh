@@ -63,6 +63,8 @@ go get github.com/maxbrunsfeld/counterfeiter/v6
 # recommended not to use go get ....
 curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s -- -b $(go env GOPATH)/bin ${GOLANGCI_VERSION}
 
+# benchmark stats processor
+go install golang.org/x/perf/cmd/benchstat@latest
 
 # Visual Studio
 # -------------
