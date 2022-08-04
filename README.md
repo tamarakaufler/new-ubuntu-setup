@@ -34,6 +34,9 @@
 3b) __cluster_tools_GCP_3b.sh__
     * GCP - google SDK
 
+3c) __cluster_tools_AWS_3c.sh__
+    * AWS
+
 4) __clone_github_repos_4.sh__
     * cloning of desired repos
 
